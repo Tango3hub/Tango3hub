@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tango3hub</title>
+    <link rel="stylesheet" href="/designs/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="/images/TANGO3HUB.jpg" alt="TANGO3HUB Logo">
+        </div>
+
+        <div class="logo2">
+            <img src="/images/TANGO3HUB only.jpg">
+        </div>
+
+
+        <nav>
+
+            <ul class="new-pages">
+                <li>
+                    <a href="/Pages/index.html">Home</a>
+
+                </li>
+                <li>
+                    <a href="/Pages/about.html">About</a>
+
+                </li>
+                <li>
+                    <a href="/Pages/contact.html">Contact Us</a>
+                </li>
+            </ul>
+
+
+            <div class="menu-toggle">☰</div> <!-- Hamburger icon using Unicode character -->
+
+            <ul class="menu">
+                <li>
+                    <a href="#">Team</a>
+                    
+                </li>
+                <li>
+                    <a href="/Pages/news.html">News</a>
+
+                    
+                </li>
+                <li>
+                    <a href="/Pages/Faq.html">FAQ</a>
+                   
+                </li>
+                <li>
+                    <a href="/Pages/privacy.html">Privacy policy</a>
+                    
+                </li>
+                <li>
+                    <a href="/Pages/terms.html">Terms</a>
+                   
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Achieve Your Goals</h1>
+            <p>Empowering you to excel in your career journey.</p>
+        </div>
+    </section>
+
+    <section class="about-body">
+        <div class="about-section">
+            <div class="about-image">
+                <img src="/images/beautiful-cryptocurrwncy-concept.jpg" alt="Woman reading a book">
+            </div>
+            <div class="about-content">
+                <img src="/images/TANGO3HUB only.jpg" class="about-tango">
+
+                <h1 class="about-heading">
+                    <span class="arrow">➔</span> About
+                </h1>
+
+                <p>
+                    At <strong>TANGO3HUB</strong>, we are dedicated career coaches committed to guiding individuals
+                    towards success in their professional endeavors. Our tailored coaching programs
+                    focus on enhancing skills, building confidence, and achieving career growth.
+                    With a personalized approach, we help you unlock your full potential and reach
+                    new heights in your career.
+                </p>
+                <a href="#" class="discover-btn">Discover More</a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="service-body">
+        <div class="service-header">
+            <h1>Our Professional Services</h1>
+            <p>Explore job opportunities, courses, and income tools tailored to boost your career.</p>
+        </div>
+
+        <div class="Service-container">
+            <div class="categories">
+                <button class="category-btn active" data-category="all">All Services</button>
+                <button class="category-btn" data-category="job">Job</button>
+                <button class="category-btn" data-category="courses">Courses</button>
+                <button class="category-btn" data-category="income">Income</button>
+            </div>
+
+            <div id="services-container" class="services-container"></div>
+
+            <div class="pagination">
+                <button id="prev-btn" disabled>&laquo; Prev</button>
+                <span id="page-info"></span>
+                <button id="next-btn">Next &raquo;</button>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="recent-news">
+        <h2>Recent News</h2>
+        <div class="news-containers">
+            <!-- Example of a News Post (This will be repeated for each post) -->
+            <div class="news-cards">
+                <img src="/images/beautiful-cryptocurrwncy-concept.jpg" alt="News Images">
+                <h3>A beginner's guide to London City trading</h3>
+                
+                <div class="news-meta">
+                    <span class="views">
+                        <i class="fas fa-eye"></i> <span class="view-count">20</span>
+                    </span>
+                    <span class="comments">
+                        <i class="fas fa-comment"></i> <span class="comment-count">0</span>
+                    </span>
+                    <span class="likes">
+                        <i class="fas fa-heart"></i> 0
+                    </span>
+
+                    
+                </div>
+                <a href="https://www.instagram.com/p/ExampleLink2/">View on instagram</a>
+            </div>
+    
+            <!-- Add more news cards dynamically -->
+        </div>
+        <a href="news.html" class="view-more">View More News</a>
+    </section>
+    <script src="/designs/scripts.js"></script>
+    <script>
+        // JavaScript for toggling dropdown on click
+        document.querySelector('.menu-toggle').addEventListener('click', function () {
+            document.querySelector('.menu').classList.toggle('show');
+        });
+    </script>
+
+</body>
+
+</html>

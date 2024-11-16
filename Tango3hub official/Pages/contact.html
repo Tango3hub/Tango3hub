@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="/designs/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="/images/TANGO3HUB.jpg" alt="TANGO3HUB Logo">
+        </div>
+
+        <div class="logo2">
+            <img src="/images/TANGO3HUB only.jpg">
+        </div>
+
+
+        <nav>
+
+            <ul class="new-pages">
+                <li>
+                    <a href="/Pages/index.html">Home</a>
+
+                </li>
+                <li>
+                    <a href="/Pages/about.html">About</a>
+
+                </li>
+                <li>
+                    <a href="/Pages/contact.html">Contact Us</a>
+                </li>
+            </ul>
+
+
+            <div class="menu-toggle">☰</div> <!-- Hamburger icon using Unicode character -->
+
+            <ul class="menu">
+                <li>
+                    <a href="#">Team</a>
+                    
+                </li>
+                <li>
+                    <a href="/Pages/news.html">News</a>
+
+                    
+                </li>
+                <li>
+                    <a href="/Pages/Faq.html">FAQ</a>
+                   
+                </li>
+                <li>
+                    <a href="/Pages/privacy.html">Privacy policy</a>
+                    
+                </li>
+                <li>
+                    <a href="/Pages/terms.html">Terms</a>
+                   
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="body-container">
+        <div class="form-container">
+            <h2>Get a Free Case Evaluation Today!</h2>
+            <p>Available 24 hours a day!</p>
+            <form id="contactForm">
+                <input type="text" placeholder="Enter your Name" required>
+                <input type="email" placeholder="Enter a valid email address" required>
+                <textarea placeholder="Enter your message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <div class="success-message" id="successMessage">Submitted successfully!</div>
+        </div>
+        <div class="info-container">
+            <div class="map-container">
+                <h2>We Are Here</h2>
+                <p>Mon-Fri 8:30AM-5PM / Phones are open 24/7</p>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.8059498826257!2d3.583131914758454!3d6.467338195314894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf6fc8a3dcd6d%3A0x3fd2cbb91af3a7eb!2sAjah%2C%20Lagos!5e0!3m2!1sen!2sng!4v1692029938663!5m2!1sen!2sng"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="contact-container">
+        <div class="contact-box">
+            <i class="fas fa-phone-alt"></i>
+            <p>Call Us</p>
+            <p>09034770558 (Gift) </p>
+            <p>09032534280 (Olaitan)</p>
+        </div>
+        <div class="contact-box">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>Location</p>
+            <a href="">
+                <p>ajah Lagos Nigeria</p>
+            </a>
+        </div>
+        <div class="contact-box">
+            <i class="fas fa-clock"></i>
+            <p>Hours</p>
+            <p>Mon-Fri 11 am - 8 pm,</p>
+            <p> Sat-Sun 6 am - 8 pm</p>
+        </div>
+    </div>
+    </div>
+
+
+
+    <script src="/designs/scripts.js"></script>
+</body>
+
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        document.getElementById('successMessage').style.display = 'block';
+        setTimeout(function () {
+            document.getElementById('successMessage').style.display = 'none';
+        }, 10000);
+    });
+</script>
+
+
+<script>
+    // JavaScript for toggling dropdown on click
+    document.querySelector('.menu-toggle').addEventListener('click', function () {
+        document.querySelector('.menu').classList.toggle('show');
+    });
+</script>
+
+</html>

@@ -1,0 +1,963 @@
+/* Basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-image: url(/images/high-rise-buildings-blue-sky-shinjuku-tokyo\ \(1\).jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+header {
+  display: flex;
+  position: fixed; /* Keeps it fixed to the viewport */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  background-color: #fff; /* Adjust the background color */
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000; /* Ensure it stays above other content */
+
+}
+
+.logo img {
+  max-width: 60px; /* Adjust the width as needed */
+  height: 40px; /* Maintain aspect ratio */
+  margin: 10px;
+}
+
+.logo2 img {
+  max-width: 160px; /* Adjust the width as needed */
+  height: 60px; /* Maintain aspect ratio */
+  margin-left: -660px;
+}
+
+/* Styling for the new pages links */
+.new-pages {
+  display: flex;
+  gap: 20px; /* Adjust spacing between the links */
+  /* Optional margin for spacing between new pages and menu */
+  margin-left: -320px;
+  align-items: center;
+  margin-top: 20px;
+  position: absolute;
+}
+
+.new-pages li {
+  list-style: none;
+  position: relative; /* Required for positioning tooltips */
+}
+
+.new-pages a {
+  text-decoration: none;
+  color: #333; /* Text color for the links */
+  font-weight: bold; /* Make the links bold for better visibility */
+  padding: 10px;
+  transition: color 0.3s ease; /* Smooth transition on hover */
+}
+
+.new-pages a:hover {
+  color: #002284; /* Change link color on hover (blue) */
+  background-color: #007bff60;
+  border-radius: 40px;
+}
+
+/* Adjust for mobile or smaller screens */
+@media (max-width: 768px) {
+  .search-bar {
+    width: 100%; /* Full width on smaller screens */
+  }
+}
+
+nav {
+  position: relative;
+}
+
+ul.menu {
+  list-style: none;
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  top: 50px;
+  width: 230px;
+  padding: 10px 0;
+  margin-left: -115px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  width: fit-content;
+}
+
+ul.menu.show {
+  display: block; /* Show the dropdown menu when 'show' class is added */
+}
+
+ul.menu li {
+  position: relative;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between; /* Aligns the arrow to the end of the text */
+  align-items: center;
+  padding: 4px;
+  transition: background-color 0.3s ease;
+}
+
+ul.menu li:hover {
+  background-color: #007bff60;
+}
+
+ul.menu li a {
+  text-decoration: none;
+  color: #000;
+  flex-grow: 1; /* Make the text take the available space */
+}
+
+/* Arrow styles */
+ul.menu li a::after {
+  content: "▼"; /* Default arrow down */
+  font-size: 1em;
+  margin-left: 10px;
+  color: #002284;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate arrow up on hover */
+ul.menu li:hover a::after {
+  transform: rotate(180deg); /* Arrow points up on hover */
+}
+
+/* Tooltip styles */
+.tooltip {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  width: fit-content;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  top: 100%; /* Tooltip appears below the menu item */
+  margin-top: 80px;
+  z-index: 1000;
+  font-size: 0.95em;
+  white-space: normal;
+  margin-top: 9px; /* Slight space between the menu item and the tooltip */
+}
+
+/* Show the tooltip on hover */
+ul.menu li:hover .tooltip {
+  display: block;
+}
+
+/* Style for the hero section */
+.hero {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-content {
+  color: #fff;
+  text-shadow: 4px 4px 4px rgba(0, 34, 132);
+}
+.hero-content h1 {
+  font-size: 4rem;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+  cursor: pointer;
+  color: #2980b9;
+  padding: 10px;
+  background-color: #fff;
+  border: none;
+  font-size: 1.5em; /* Increase font size for the hamburger icon */
+
+  align-items: center;
+  justify-content: center;
+  margin-right: -12px;
+  width: 1;
+}
+
+.menu-toggle:hover {
+  color: #002284; /* Change link color on hover (blue) */
+  background-color: #007bff60;
+  border-radius: 10px;
+  height: fit-content;
+}
+
+/* About Section Layout */
+
+.about-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 95vh;
+
+  width: 100%;
+}
+.about-section {
+  display: flex;
+  max-width: 100%;
+  background-color: #fff;
+  gap: 50px;
+  margin-top: 1px;
+  width: 100%;
+  height: 600px;
+}
+
+/* Image Styling */
+.about-image img {
+  width: 50%;
+  max-width: 100%;
+  margin-top: 100px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: 50px;
+}
+
+/* Content Styling */
+.about-heading {
+  font-size: 1rem;
+  color: #002284;
+  line-height: 1.3;
+  width: fit-content;
+  position: relative; /* Allow fine-tuning of the heading */
+  top: -60px; /* Adjust vertical positioning */
+  left: -1130px; /* Adjust horizontal positioning */
+  margin: 20px 0; /* Add spacing around the element */
+  display: flex; /* Align arrow and text horizontally */
+  align-items: center; /* Vertically center the arrow and text */
+  gap: 8px; /* Add spacing between the arrow and text */
+}
+
+.arrow {
+  font-size: 1rem; /* Adjust the size of the arrow */
+  color: #002284; /* Arrow color for styling */
+}
+
+.about-tango {
+  max-width: 160px; /* Adjust the width as needed */
+  height: 50px; /* Maintain aspect ratio */
+  margin-left: -1300px;
+  
+}
+
+.about-content p {
+  font-size: 18px;
+  color: #555;
+  width: 450px;
+  margin-bottom: 27px;
+  line-height: 1.6;
+  margin-left: -500px;
+  margin-top: 45px;
+  align-items: center;
+  text-align: center;
+}
+
+/* Button Styling */
+.discover-btn {
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-block;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-left: -340px;
+  margin-top: -50px;
+}
+
+.discover-btn:hover {
+  background-color: #1d6fa5;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Section */
+.service-body {
+  background: #fff;
+  height: 100vh;
+  margin-top: -50px;
+}
+.service-header {
+  text-align: center;
+  margin-top: -75px;
+}
+.header-h1{
+  margin-top: -4040px;
+}
+.service-header h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 25px;
+  margin-top: -50px;
+}
+
+.service-header p {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-top: 10px;
+}
+
+/* Categories */
+.categories {
+  display: flex; /* Flexbox for horizontal alignment */
+  justify-content: last baseline; /* Center-align categories horizontally */
+  align-items: last baseline; /* Center-align vertically */
+  flex-wrap: wrap; /* Wrap to the next line if needed */
+  gap: 15px; /* Spacing between each category button */
+  background: none; /* No background */
+  border: none; /* No border */
+  font-size: 18px; /* Professional font size */
+  padding: 10px 15px; /* Padding for clickable area */
+  cursor: pointer; /* Pointer cursor for interactivity */
+  position: relative; /* Allow for positioning of child elements */
+  margin: 20px auto; /* Center with vertical margins */
+  margin-left: 160px;
+  width: 100%; /* Ensure it stretches across */
+  max-width: 800px; /* Limit the width for better alignment */
+  top: 90px;
+}
+
+.category-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  padding: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.category-btn.active::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #2980b9;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.category-btn:hover {
+  background-color: #2980b9;
+  color: white;
+  border-color: #2980b9;
+}
+
+/* Services Grid */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Flexible but consistent columns */
+  gap: 25px;
+  width: 100%; /* Full width but capped with max-width */
+  max-width: 1100px; /* Limit the width for better alignment */
+  margin: 20px auto; /* Center the grid horizontally and add vertical margins */
+  padding: 0 15px; /* Add inner padding for spacing on both sides */
+  margin-top: 100px;
+}
+
+/* Service Card */
+.service-card {
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 100%;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.service-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.service-content {
+  padding: 20px;
+  text-align: left;
+}
+
+.service-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.service-price {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: #27ae60;
+}
+
+.book-btn {
+  background-color: #3498db;
+  color: white;
+  padding: 10px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.book-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+}
+
+.pagination button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #2c3e50;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-bottom: -20px;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 40px;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image img {
+    max-width: 100%;
+  }
+
+  .about-content h1 {
+    font-size: 36px;
+  }
+
+  .about-content p {
+    font-size: 16px;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  ul.menu {
+    width: 100%; /* Ensure the menu takes the full width on small screens */
+  }
+
+  .hero-content h1 {
+    font-size: 2em; /* Adjust font size for smaller screens */
+  }
+
+  .hero-content p {
+    font-size: 1em;
+  }
+}
+
+/* Tooltip responsiveness */
+@media (max-width: 600px) {
+  .tooltip {
+    width: 90%; /* Make the tooltip smaller for mobile screens */
+  }
+}
+.all-news {
+  background-color: #1815154b;
+  margin-top: 99px;
+  
+}
+.all-news h1 {
+  font-size: 2.5rem;
+  margin: 40px 0;
+  color: #2c3e50;
+  font-weight: bold;
+  text-align: center;
+  
+}
+
+.recent-news {
+  padding: 50px 20px;
+  background-color: #fff;
+  text-align: center;
+  margin-top: 1px;
+}
+
+.recent-news h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.news-containers {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(200px, 2fr)
+  ); /* Flexible but consistent columns */
+  gap: 25px;
+  width: 100%; /* Full width but capped with max-width */
+  max-width: 1400px; /* Limit the width for better alignment */
+  margin: 20px auto; /* Center the grid horizontally and add vertical margins */
+  padding: 0 15px; /* Add inner padding for spacing on both sides */
+  margin-top: 100px;
+}
+
+.news-cards {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.news-cards:hover {
+  transform: scale(1.05);
+}
+
+.news-cards img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.news-cards h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.news-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.news-meta span {
+  display: flex;
+  align-items: center;
+}
+
+.news-meta i {
+  margin-right: 5px;
+}
+
+.view-more {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.view-more:hover {
+  background-color: #0056b3;
+}
+
+/* News Grid */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* News Card Styling */
+.news-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.news-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.news-card .content {
+  padding: 15px;
+  text-align: left;
+}
+
+.news-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: bold;
+}
+
+.news-card p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+
+
+/*aboutus*/
+
+.who-we-are {
+  padding: 30px;
+  text-align: center;
+  background-color: #00000038;
+  margin-top: 80px;
+}
+
+.who-we-are h2 {
+  font-size: 2rem;
+  margin-right: 1300px;
+  color: white;
+  border-color: #000;
+  margin-top: 10px;
+  width: 250px;
+}
+
+.who-we-are .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4%;
+  margin-top: 0px;
+  background-color: #0e0c0c31;
+}
+
+.who-we-are .text {
+  flex: 1;
+  max-width: 50%;
+  margin-right: 20px;
+  margin-bottom: 100px;
+}
+
+.who-we-are .text p {
+  font-size: 1.5em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.who-we-are .image {
+  flex: 1;
+  max-width: 50%;
+  text-align: right;
+}
+
+.who-we-are .image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.about-us {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #0000006c;
+}
+
+.about-us h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.about-us p {
+  margin-bottom: 40px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.5em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.about-us-images {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.image-container {
+  flex: 1;
+  margin: 10px;
+  min-width: 250px;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.image-container p {
+  font-size: 1.1em;
+  margin-top: 10px;
+}
+
+.our-team {
+  text-align: center;
+  background-color: #0000006c;
+  padding: 50px 20px;
+  color: #ffffff;
+}
+
+.our-team h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.team-members {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  
+}
+
+.team-member:hover{
+  transform: scale(1.09);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.team-member {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 10px;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.team-descriptions {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.team-description {
+  display: none;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.team-description-content {
+  display: flex;
+  align-items: center;
+}
+
+.team-description img {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.text-content {
+  max-width: 600px;
+}
+
+.team-description h3 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.team-description h4 {
+  font-size: 1.2em;
+  margin: 5px 0;
+}
+
+.team-description p {
+  margin-top: 10px;
+}
+
+.body-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  width: 100%;
+  background-color: #00000042;
+margin-top: 40px;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+
+  background-position: cover;
+  background-repeat: no-repeat; /* Prevents the background image from repeating */
+}
+
+.form-container,
+.info-container {
+  flex: 1;
+  min-width: 300px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-container {
+  background-color: #297fb98f;
+  height: 550px;
+}
+
+.form-container h2,
+.map-container h2 {
+  margin-top: 70px;
+  align-self: center;
+  color: white;
+  margin-bottom: 50px;
+}
+
+.form-container p,
+.map-container p {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 150px;
+}
+
+.form-container input,
+.form-container textarea {
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+}
+
+.form-container button {
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #5b98ba;
+  color: white;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background-color: #e03c00;
+}
+.success-message {
+  display: none;
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.map-container {
+  margin-bottom: 20px;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  gap: 150px;
+  background-color: #00000042;
+}
+
+.contact-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(60, 74, 87, 0.479);
+  margin-bottom: 10px;
+  width: 210px;
+}
+.contact-box:hover {
+  background-color: #5b98ba;
+}
+
+.contact-box i {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: white;
+  margin-top: 1px;
+}
+
+.contact-box p {
+  margin: 5px 0;
+  font-size: 300;
+  color: white;
+}
+
